@@ -26,6 +26,42 @@ Your goal is to use the course knowledge to optimize the ChatBot program from a 
   * Mac: There is a [homebrew installation available](https://formulae.brew.sh/formula/wxmac).
   * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Some version numbers may need to be changed in instructions to install v3.0 or greater.
 
+### Manual Installation of wxWidgets
+
+Running on Ubuntu 20.04, the `sudo install` failed, but through the course page there were some
+instructions for how to do a manual install of wxWidgets.
+```
+# Go to a suitable folder
+wget https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxWidgets-3.1.4.tar.bz2
+tar -xf wxWidgets-3.1.4.tar.bz2
+cd wxWidgets-3.1.4
+./configure
+# Note, 'make' step takes several minutes
+make
+sudo make install
+```
+
+**Instructions after installation**:
+```
+ ------------------------------------------------------
+ 
+ The installation of wxWidgets is finished.  On certain
+ platforms (e.g. Linux) you'll now have to run ldconfig
+ if you installed a shared library and also modify the
+ LD_LIBRARY_PATH (or equivalent) environment variable.
+ 
+ wxWidgets comes with no guarantees and doesn't claim
+ to be suitable for any purpose.
+ 
+ Read the wxWindows Licence on licencing conditions.
+ 
+ ------------------------------------------------------
+
+```
+
+
+
+
 ## Basic Build Instructions
 
 1. Clone this repo.
