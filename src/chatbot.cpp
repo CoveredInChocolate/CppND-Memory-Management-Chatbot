@@ -21,6 +21,7 @@ ChatBot::ChatBot()
 ChatBot::ChatBot(std::string filename)
 {
     std::cout << "ChatBot Constructor" << std::endl;
+    //std::cout << "Filename:  " << filename << std::endl;
     
     // invalidate data handles
     _chatLogic = nullptr;
@@ -32,11 +33,14 @@ ChatBot::ChatBot(std::string filename)
 
 ChatBot::~ChatBot()
 {
+    // This destructor appears to be called twice
+    //std::cout << "**Debugging:  ";
     std::cout << "ChatBot Destructor" << std::endl;
 
     // deallocate heap memory
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
+        // This is the cause of the segmentation fault
         delete _image;
         _image = NULL;
     }
